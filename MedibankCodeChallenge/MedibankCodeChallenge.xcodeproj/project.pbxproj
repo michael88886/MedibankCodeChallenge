@@ -9,13 +9,14 @@
 /* Begin PBXBuildFile section */
 		78166A7724E81900008DDAF5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78166A7624E81900008DDAF5 /* AppDelegate.swift */; };
 		78166A7924E81900008DDAF5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78166A7824E81900008DDAF5 /* SceneDelegate.swift */; };
-		78166A7B24E81900008DDAF5 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78166A7A24E81900008DDAF5 /* FirstViewController.swift */; };
-		78166A7D24E81900008DDAF5 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78166A7C24E81900008DDAF5 /* SecondViewController.swift */; };
+		78166A7B24E81900008DDAF5 /* HeadlineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78166A7A24E81900008DDAF5 /* HeadlineViewController.swift */; };
+		78166A7D24E81900008DDAF5 /* SourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78166A7C24E81900008DDAF5 /* SourceViewController.swift */; };
 		78166A8024E81900008DDAF5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78166A7E24E81900008DDAF5 /* Main.storyboard */; };
 		78166A8324E81900008DDAF5 /* MedibankCodeChallenge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 78166A8124E81900008DDAF5 /* MedibankCodeChallenge.xcdatamodeld */; };
 		78166A8524E81902008DDAF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78166A8424E81902008DDAF5 /* Assets.xcassets */; };
 		78166A8824E81902008DDAF5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78166A8624E81902008DDAF5 /* LaunchScreen.storyboard */; };
 		78166A9324E81902008DDAF5 /* MedibankCodeChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78166A9224E81902008DDAF5 /* MedibankCodeChallengeTests.swift */; };
+		78166A9E24E81982008DDAF5 /* SavedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78166A9D24E81982008DDAF5 /* SavedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,8 +33,8 @@
 		78166A7324E81900008DDAF5 /* MedibankCodeChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedibankCodeChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78166A7624E81900008DDAF5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78166A7824E81900008DDAF5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		78166A7A24E81900008DDAF5 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		78166A7C24E81900008DDAF5 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		78166A7A24E81900008DDAF5 /* HeadlineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlineViewController.swift; sourceTree = "<group>"; };
+		78166A7C24E81900008DDAF5 /* SourceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceViewController.swift; sourceTree = "<group>"; };
 		78166A7F24E81900008DDAF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		78166A8224E81900008DDAF5 /* MedibankCodeChallenge.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MedibankCodeChallenge.xcdatamodel; sourceTree = "<group>"; };
 		78166A8424E81902008DDAF5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -42,6 +43,7 @@
 		78166A8E24E81902008DDAF5 /* MedibankCodeChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MedibankCodeChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		78166A9224E81902008DDAF5 /* MedibankCodeChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedibankCodeChallengeTests.swift; sourceTree = "<group>"; };
 		78166A9424E81902008DDAF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		78166A9D24E81982008DDAF5 /* SavedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,8 +87,7 @@
 			children = (
 				78166A7624E81900008DDAF5 /* AppDelegate.swift */,
 				78166A7824E81900008DDAF5 /* SceneDelegate.swift */,
-				78166A7A24E81900008DDAF5 /* FirstViewController.swift */,
-				78166A7C24E81900008DDAF5 /* SecondViewController.swift */,
+				78166A9F24E819C1008DDAF5 /* ViewController */,
 				78166A7E24E81900008DDAF5 /* Main.storyboard */,
 				78166A8424E81902008DDAF5 /* Assets.xcassets */,
 				78166A8624E81902008DDAF5 /* LaunchScreen.storyboard */,
@@ -103,6 +104,16 @@
 				78166A9424E81902008DDAF5 /* Info.plist */,
 			);
 			path = MedibankCodeChallengeTests;
+			sourceTree = "<group>";
+		};
+		78166A9F24E819C1008DDAF5 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				78166A7A24E81900008DDAF5 /* HeadlineViewController.swift */,
+				78166A7C24E81900008DDAF5 /* SourceViewController.swift */,
+				78166A9D24E81982008DDAF5 /* SavedViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,9 +217,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78166A9E24E81982008DDAF5 /* SavedViewController.swift in Sources */,
 				78166A8324E81900008DDAF5 /* MedibankCodeChallenge.xcdatamodeld in Sources */,
-				78166A7D24E81900008DDAF5 /* SecondViewController.swift in Sources */,
-				78166A7B24E81900008DDAF5 /* FirstViewController.swift in Sources */,
+				78166A7D24E81900008DDAF5 /* SourceViewController.swift in Sources */,
+				78166A7B24E81900008DDAF5 /* HeadlineViewController.swift in Sources */,
 				78166A7724E81900008DDAF5 /* AppDelegate.swift in Sources */,
 				78166A7924E81900008DDAF5 /* SceneDelegate.swift in Sources */,
 			);
