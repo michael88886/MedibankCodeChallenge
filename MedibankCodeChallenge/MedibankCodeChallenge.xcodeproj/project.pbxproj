@@ -32,6 +32,12 @@
 		789F5D7024E841A40049F82A /* Source+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789F5D6C24E841A40049F82A /* Source+CoreDataClass.swift */; };
 		789F5D7224E8422A0049F82A /* HeadlineSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789F5D7124E8422A0049F82A /* HeadlineSource.swift */; };
 		78EE793024E9318000DC8636 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EE792F24E9318000DC8636 /* AppError.swift */; };
+		78EE793324E9468600DC8636 /* SourceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EE793124E9468600DC8636 /* SourceCell.swift */; };
+		78EE793424E9468600DC8636 /* SourceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78EE793224E9468600DC8636 /* SourceCell.xib */; };
+		78EE793A24E9576700DC8636 /* BaseNewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EE793924E9576700DC8636 /* BaseNewsModel.swift */; };
+		78EE793C24E95B4D00DC8636 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EE793B24E95B4D00DC8636 /* Network.swift */; };
+		78EE793E24E962FD00DC8636 /* Decodable+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EE793D24E962FD00DC8636 /* Decodable+extensions.swift */; };
+		78EE794024E96E5200DC8636 /* SourceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EE793F24E96E5200DC8636 /* SourceResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +79,12 @@
 		789F5D6C24E841A40049F82A /* Source+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Source+CoreDataClass.swift"; sourceTree = "<group>"; };
 		789F5D7124E8422A0049F82A /* HeadlineSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlineSource.swift; sourceTree = "<group>"; };
 		78EE792F24E9318000DC8636 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		78EE793124E9468600DC8636 /* SourceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceCell.swift; sourceTree = "<group>"; };
+		78EE793224E9468600DC8636 /* SourceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SourceCell.xib; sourceTree = "<group>"; };
+		78EE793924E9576700DC8636 /* BaseNewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNewsModel.swift; sourceTree = "<group>"; };
+		78EE793B24E95B4D00DC8636 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		78EE793D24E962FD00DC8636 /* Decodable+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decodable+extensions.swift"; sourceTree = "<group>"; };
+		78EE793F24E96E5200DC8636 /* SourceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceResponse.swift; sourceTree = "<group>"; };
 		B367F3D153333A4C75169624 /* Pods-MedibankCodeChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MedibankCodeChallenge.debug.xcconfig"; path = "Target Support Files/Pods-MedibankCodeChallenge/Pods-MedibankCodeChallenge.debug.xcconfig"; sourceTree = "<group>"; };
 		BB60624530207ABB1402C0E1 /* Pods_MedibankCodeChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MedibankCodeChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1E70712971F429F6EB6FA7B /* libPods-MedibankCodeChallengeTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MedibankCodeChallengeTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -154,6 +166,8 @@
 			children = (
 				78166A7A24E81900008DDAF5 /* HeadlineViewController.swift */,
 				78166A7C24E81900008DDAF5 /* SourceViewController.swift */,
+				78EE793124E9468600DC8636 /* SourceCell.swift */,
+				78EE793224E9468600DC8636 /* SourceCell.xib */,
 				78166A9D24E81982008DDAF5 /* SavedViewController.swift */,
 			);
 			path = ViewController;
@@ -183,6 +197,9 @@
 			isa = PBXGroup;
 			children = (
 				78166AAE24E82DF6008DDAF5 /* SourceService.swift */,
+				78EE793F24E96E5200DC8636 /* SourceResponse.swift */,
+				78EE793924E9576700DC8636 /* BaseNewsModel.swift */,
+				78EE793B24E95B4D00DC8636 /* Network.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -192,6 +209,7 @@
 			children = (
 				78166AC624E83B98008DDAF5 /* Utility.swift */,
 				78EE792F24E9318000DC8636 /* AppError.swift */,
+				78EE793D24E962FD00DC8636 /* Decodable+extensions.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -311,6 +329,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78EE793424E9468600DC8636 /* SourceCell.xib in Resources */,
 				78166A8824E81902008DDAF5 /* LaunchScreen.storyboard in Resources */,
 				78166A8524E81902008DDAF5 /* Assets.xcassets in Resources */,
 				78166A8024E81900008DDAF5 /* Main.storyboard in Resources */,
@@ -395,20 +414,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78EE793324E9468600DC8636 /* SourceCell.swift in Sources */,
 				78166A9E24E81982008DDAF5 /* SavedViewController.swift in Sources */,
 				78166AA824E81A47008DDAF5 /* Headline.swift in Sources */,
 				789F5D7224E8422A0049F82A /* HeadlineSource.swift in Sources */,
 				78166AC724E83B98008DDAF5 /* Utility.swift in Sources */,
 				78166AA524E81A02008DDAF5 /* HeadlineViewModel.swift in Sources */,
 				78166A8324E81900008DDAF5 /* MedibankCodeChallenge.xcdatamodeld in Sources */,
+				78EE794024E96E5200DC8636 /* SourceResponse.swift in Sources */,
 				789F5D6D24E841A40049F82A /* Source+CoreDataProperties.swift in Sources */,
 				789F5D6E24E841A40049F82A /* SavedHeadline+CoreDataClass.swift in Sources */,
 				78166AA124E819E5008DDAF5 /* SavedViewModel.swift in Sources */,
+				78EE793A24E9576700DC8636 /* BaseNewsModel.swift in Sources */,
 				78166A7D24E81900008DDAF5 /* SourceViewController.swift in Sources */,
 				78166A7B24E81900008DDAF5 /* HeadlineViewController.swift in Sources */,
 				78166AA324E819F0008DDAF5 /* SourceViewModel.swift in Sources */,
+				78EE793E24E962FD00DC8636 /* Decodable+extensions.swift in Sources */,
 				78166AAD24E81F60008DDAF5 /* SavedNews.swift in Sources */,
 				78166AAF24E82DF6008DDAF5 /* SourceService.swift in Sources */,
+				78EE793C24E95B4D00DC8636 /* Network.swift in Sources */,
 				789F5D7024E841A40049F82A /* Source+CoreDataClass.swift in Sources */,
 				78EE793024E9318000DC8636 /* AppError.swift in Sources */,
 				78166A7724E81900008DDAF5 /* AppDelegate.swift in Sources */,
