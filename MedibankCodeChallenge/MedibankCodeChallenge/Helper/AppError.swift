@@ -16,7 +16,7 @@ enum AppError: Error {
         case .networkServiceFailed:
             return "Network service failed."
         case .decodeError:
-            return "Decode Error."
+            return "Falied to decode."
         case .failedFetchSource:
             return "Failed to fetch headline souces."
         }

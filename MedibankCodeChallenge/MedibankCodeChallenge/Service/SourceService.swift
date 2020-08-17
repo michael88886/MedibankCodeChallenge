@@ -2,6 +2,7 @@
 
 import Foundation
 import CoreData
+import RxSwift
 
 final class SourceService {
     
@@ -9,32 +10,36 @@ final class SourceService {
     /// Core data fetch result
     private var fetchResult: NSPersistentStoreAsynchronousResult? = nil
     
-    func fetchSources(completion: @escaping ([Source]?, Error?) -> Void) {
-        // Data context
-        let context = Utility.dataContext()
+    /// The network client
+    private var networkClient = NetworkClient()
+    
+    // MARK: - Functions
+    func loadSource() -> Single<SourceModel> {
         
-        // Fetch request
-        let fetchRequest = NSFetchRequest<Source>(entityName: "Source")
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
-        
-        // Asynchronous fetch
-        let asyncFetchRequest = NSAsynchronousFetchRequest(fetchRequest: fetchRequest) { (asychronousFetchResult) in
-            guard let result = asychronousFetchResult.finalResult else { return }
-            // Call back main queue
-            DispatchQueue.main.async {
-                completion(result, nil)
-            }
-        }
-        
-        // Execute feteching
-        do {
-            fetchResult = try context.execute(asyncFetchRequest) as? NSPersistentStoreAsynchronousResult
-        } catch {
-            completion(nil, AppError.failedFetchSource)
+        return (networkClient.networkRequest(.source) as Single <SourceResponse>)
+            .observeOn(MainScheduler.instance)
+            .map(SourceMapper().mapToModel)
+            .catchError { error in
+                Single.error(error)
         }
     }
     
-    func cancelFetch() {
-        fetchResult?.cancel()
+    func fetchSelectedSources() -> Single<[String]> {
+        return Single<[String]>.create { single in
+            let item = UserDefaults.standard.array(forKey: "Sources") as? [String]
+            let sources = item ?? []
+            single(.success(sources))
+            return Disposables.create()
+        }
+    }
+    
+    func saveToCoreData(items: [SourceItem]) {
+        let defaults = UserDefaults.standard
+        var sourceIds = [String]()
+        for item in items {
+            sourceIds.append(item.id)
+        }
+        defaults.set(sourceIds, forKey: "Sources")
+        defaults.synchronize()
     }
 }

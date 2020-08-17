@@ -27,12 +27,12 @@ enum NetworkService {
         // Base url
         var urlComponent = URLComponents()
         urlComponent.scheme = "https"
-        urlComponent.host = "newsapi.org/v2/"
+        urlComponent.host = "newsapi.org"
         
         // Path
         switch self {
-        case .headline: urlComponent.path = "top-headlines"
-        case .source: urlComponent.path = "sources"
+        case .headline: urlComponent.path = "/v2/top-headlines"
+        case .source: urlComponent.path = "/v2/sources/"
         }
         
         // Querries
@@ -49,7 +49,8 @@ class NetworkClient {
     @discardableResult func networkRequest<T> (_ service: NetworkService) -> Single<T> where T: Decodable {
         return Single<T>.create { single in
             
-            guard let url = service.urlComponent().url else {
+            let urlComponent = service.urlComponent()
+            guard let url = urlComponent.url else {
                 return Disposables.create()
             }
             
