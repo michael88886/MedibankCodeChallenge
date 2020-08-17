@@ -12,13 +12,11 @@ struct HeadlineResponse: BaseResponse, ErrorRespones, Decodable {
 
 struct Article: Decodable {
     var source: HeadlineSource
-    var author: String
+    var author: String?
     var title: String
-    var description: String
+    var description: String?
     var url: String
-    var urlToImage: String
-    var publishedAt: String
-    var content: String
+    var urlToImage: String?
 }
 
 struct HeadlineSource: Decodable {

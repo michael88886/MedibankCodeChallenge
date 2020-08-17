@@ -39,7 +39,6 @@ class SourceViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        print("Viwe will disapp")
         saveSource()
     }
     
@@ -80,10 +79,10 @@ class SourceViewController: UIViewController {
     }
     
     private func setupViewModel() {
-        viewModel.isLoading = isLoading(_:)
-        viewModel.fetchError = errorOccur(_:)
+        viewModel.isLoading = isLoading
+        viewModel.fetchError = errorOccur
         viewModel.reloadData = reloadData
-        viewModel.reloadRow = reloadRow(_:)
+        viewModel.reloadRow = reloadRow
     }
     
     @objc private func saveSource() {
@@ -117,9 +116,10 @@ extension SourceViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constant.cellId,
-                                                       for: indexPath) as? SourceCell else {
-                                                        return UITableViewCell()
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: Constant.cellId,
+            for: indexPath) as? SourceCell else {
+                return UITableViewCell()
         }
         
         let source = viewModel.sources[indexPath.row]

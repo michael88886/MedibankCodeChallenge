@@ -30,4 +30,11 @@ final class Utility {
         alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         return alertVC
     }
+    
+    // Will fetch current selected source from user default
+    static func fetchSelectedSources() -> [String] {
+        let item = UserDefaults.standard.array(forKey: "Sources") as? [String]
+        let sources = item ?? []
+        return sources
+    }
 }

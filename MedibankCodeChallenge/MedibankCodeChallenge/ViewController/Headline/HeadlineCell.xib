@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="271" id="KGk-i7-Jjw" customClass="HeadlineCell" customModule="MedibankCodeChallenge" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="247"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="247"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wmV-HU-glG" userLabel="HeadlineWrapper">
+                        <rect key="frame" x="10" y="10" width="300" height="227"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="LNX-IX-U3f" userLabel="ThumbnailImage">
+                                <rect key="frame" x="194" y="21" width="96" height="93.5"/>
+                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="LNX-IX-U3f" secondAttribute="height" multiplier="1:1" id="0uf-bC-QxK"/>
+                                    <constraint firstAttribute="height" constant="96" id="CNi-U9-tiL"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I4R-mJ-GA1" userLabel="TitleLabel">
+                                <rect key="frame" x="10" y="82" width="50.5" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ZmS-EF-U7M" userLabel="HeadlineStack">
+                                <rect key="frame" x="10" y="116" width="280" height="46"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HnI-dj-mTN" userLabel="AuthorLabel">
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="14.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-MediumItalic" family="Helvetica Neue" pointSize="12"/>
+                                        <color key="textColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DLc-aj-4cn" userLabel="SourceLabel">
+                                        <rect key="frame" x="0.0" y="14.5" width="280" height="14.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-MediumItalic" family="Helvetica Neue" pointSize="12"/>
+                                        <color key="textColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="clip" numberOfLines="4" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BUe-nJ-Rwp" userLabel="DescriptionLabel">
+                                        <rect key="frame" x="0.0" y="29" width="280" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="LNX-IX-U3f" firstAttribute="top" secondItem="wmV-HU-glG" secondAttribute="top" constant="20" id="Asg-5D-kgO"/>
+                            <constraint firstItem="I4R-mJ-GA1" firstAttribute="leading" secondItem="wmV-HU-glG" secondAttribute="leading" constant="10" id="B1x-Th-Maf"/>
+                            <constraint firstItem="I4R-mJ-GA1" firstAttribute="bottom" secondItem="LNX-IX-U3f" secondAttribute="bottom" constant="-10" id="IIT-ic-vAR"/>
+                            <constraint firstItem="ZmS-EF-U7M" firstAttribute="leading" secondItem="wmV-HU-glG" secondAttribute="leading" constant="10" id="J2Z-2R-Tca"/>
+                            <constraint firstAttribute="trailing" secondItem="ZmS-EF-U7M" secondAttribute="trailing" constant="10" id="T3X-PX-ahC"/>
+                            <constraint firstItem="ZmS-EF-U7M" firstAttribute="top" secondItem="I4R-mJ-GA1" secondAttribute="bottom" constant="10" id="Td2-J6-YK1"/>
+                            <constraint firstItem="I4R-mJ-GA1" firstAttribute="top" relation="greaterThanOrEqual" secondItem="wmV-HU-glG" secondAttribute="top" constant="10" id="Tig-KI-qPQ"/>
+                            <constraint firstAttribute="trailing" secondItem="LNX-IX-U3f" secondAttribute="trailing" constant="10" id="ZKk-T2-XQq"/>
+                            <constraint firstItem="I4R-mJ-GA1" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="LNX-IX-U3f" secondAttribute="leading" constant="-10" id="oph-eb-SuI"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="20"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="wmV-HU-glG" secondAttribute="trailing" constant="10" id="Ffy-nb-9Ah"/>
+                    <constraint firstAttribute="bottom" secondItem="wmV-HU-glG" secondAttribute="bottom" constant="10" id="Mmc-L4-j0e"/>
+                    <constraint firstItem="wmV-HU-glG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="ecq-oG-DCj"/>
+                    <constraint firstItem="wmV-HU-glG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="w7v-8T-DFQ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="authorLabel" destination="HnI-dj-mTN" id="B1w-6d-WSK"/>
+                <outlet property="descriptionLabel" destination="BUe-nJ-Rwp" id="p2B-fZ-1PW"/>
+                <outlet property="headlineWrapper" destination="wmV-HU-glG" id="kdd-gt-GFC"/>
+                <outlet property="sourceLabel" destination="DLc-aj-4cn" id="qu2-3P-gR1"/>
+                <outlet property="thumbnailImage" destination="LNX-IX-U3f" id="Kdh-ep-rRf"/>
+                <outlet property="titleLabel" destination="I4R-mJ-GA1" id="ADy-rk-Etm"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="142.29910714285714"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="photo" catalog="system" width="128" height="93"/>
+    </resources>
+</document>

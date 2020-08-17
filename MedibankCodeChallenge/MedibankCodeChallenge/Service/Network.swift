@@ -31,8 +31,11 @@ enum NetworkService {
         
         // Path
         switch self {
-        case .headline: urlComponent.path = "/v2/top-headlines"
-        case .source: urlComponent.path = "/v2/sources/"
+        case .headline:
+            urlComponent.path = "/v2/top-headlines"
+            
+        case .source:
+            urlComponent.path = "/v2/sources/"
         }
         
         // Querries
@@ -46,10 +49,17 @@ enum NetworkService {
 
 class NetworkClient {
     
-    @discardableResult func networkRequest<T> (_ service: NetworkService) -> Single<T> where T: Decodable {
+    @discardableResult func networkRequest<T> (_ service: NetworkService, querries: [URLQueryItem] = []) -> Single<T> where T: Decodable {
         return Single<T>.create { single in
             
-            let urlComponent = service.urlComponent()
+            var urlComponent = service.urlComponent()
+            
+            if querries.count > 0 {
+                for querry in querries {
+                    urlComponent.queryItems?.append(querry)
+                }
+            }
+            
             guard let url = urlComponent.url else {
                 return Disposables.create()
             }

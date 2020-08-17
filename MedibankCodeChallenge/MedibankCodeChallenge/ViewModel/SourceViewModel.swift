@@ -3,7 +3,7 @@
 import Foundation
 import RxSwift
 
-class SourceViewModel {
+class SourceViewModel: BaseViewModel {
 
     // MARK: - Properties
     /// The source service
@@ -39,7 +39,8 @@ class SourceViewModel {
                     }
                     
                     self?.sources = sourceModel.sources
-                    self?.fetchSavedSources()
+                    let selectedSource = Utility.fetchSelectedSources()
+                    self?.checkSelectedResult(selectedSource)
                 },
                 onError: { [weak self] error in
                     if let serviceError = error as? AppError {
@@ -70,23 +71,6 @@ class SourceViewModel {
     }
     
     // MARK: - Private helper
-    private func fetchSavedSources() {
-        
-        sourceService.fetchSelectedSources()
-            .observeOn(MainScheduler.instance)
-            .subscribe(
-                onSuccess: { [weak self] sourceIds in
-                    self?.checkSelectedResult(sourceIds)
-                },
-                onError: { [weak self] error in
-                    if let serviceError = error as? AppError {
-                        let message = serviceError.message()
-                        self?.handleFetchError(message)
-                    }
-                })
-            .disposed(by: disposeBag)
-    }
-    
     // Update data with saved source
     private func checkSelectedResult(_ savedSourceIds: [String]) {
         // Reset selected indexes
@@ -106,7 +90,7 @@ class SourceViewModel {
         finishLoading()
     }
     
-    private func handleFetchError(_ message: String) {
+    func handleFetchError(_ message: String) {
         isLoading?(false)
         fetchError?(message)
     }

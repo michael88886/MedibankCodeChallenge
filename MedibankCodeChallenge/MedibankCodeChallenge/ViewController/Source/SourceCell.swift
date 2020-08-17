@@ -10,7 +10,6 @@ class SourceCell: UITableViewCell {
         didSet {
             flagBackgroundView.layer.shadowColor = UIColor.black.cgColor
             flagBackgroundView.layer.shadowOpacity = 0.4
-//            flagBackgroundView.layer.shadowPath = UIBezierPath(rect: flagBackgroundView.bounds).cgPath
             flagBackgroundView.layer.shadowOffset = .zero
             flagBackgroundView.layer.shadowRadius = 3.0
         }
@@ -30,6 +29,7 @@ class SourceCell: UITableViewCell {
     
     // MARK: Overrides
     override func prepareForReuse() {
+        super.prepareForReuse()
         flagLabel.text = ""
         sourceNameLabel.text = ""
         sourceLinkLabel.text = ""
