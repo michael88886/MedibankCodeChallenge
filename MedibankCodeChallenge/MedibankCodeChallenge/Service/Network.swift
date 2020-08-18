@@ -61,6 +61,7 @@ class NetworkClient {
             }
             
             guard let url = urlComponent.url else {
+                single(.error(AppError.invalidUrl))
                 return Disposables.create()
             }
             
@@ -75,6 +76,22 @@ class NetworkClient {
             }
             task.resume()
             return Disposables.create(with: task.cancel)
+        }
+    }
+    
+    @discardableResult func downloadImage(_ url: URL) -> Single<UIImage> {
+        return Single<UIImage>.create { single in
+            let task = URLSession.shared.dataTask(with: url) { (data, _, error) in
+                guard error == nil else {
+                    single(.error(AppError.failedFetchSource))
+                    return
+                }
+                
+                self.imageFetchResult(data: data,
+                                      single: single)
+            }
+            task.resume()
+            return Disposables.create(with: task.resume)
         }
     }
     
@@ -112,4 +129,15 @@ class NetworkClient {
         single(.error(AppError.networkServiceFailed))
     }
     
+    private func imageFetchResult(data: Data?,
+                                  single: @escaping (SingleEvent<UIImage>) -> Void) {
+        
+        guard let data = data,
+            let image = UIImage(data: data) else {
+            single(.error(AppError.failedFetchSource))
+            return
+        }
+        single(.success(image))
+        return
+    }
 }
