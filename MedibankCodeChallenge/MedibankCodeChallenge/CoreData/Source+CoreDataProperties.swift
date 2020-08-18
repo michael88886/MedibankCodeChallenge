@@ -10,8 +10,6 @@ extension Source {
         return NSFetchRequest<Source>(entityName: "Source")
     }
 
-    @NSManaged public var id: String?
-    @NSManaged public var name: String?
-    @NSManaged public var url: String?
+    @NSManaged public var id: String
 
 }
