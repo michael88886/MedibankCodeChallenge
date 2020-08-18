@@ -14,20 +14,15 @@
 		78166A7B24E81900008DDAF5 /* HeadlineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78166A7A24E81900008DDAF5 /* HeadlineViewController.swift */; };
 		78166A7D24E81900008DDAF5 /* SourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78166A7C24E81900008DDAF5 /* SourceViewController.swift */; };
 		78166A8024E81900008DDAF5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78166A7E24E81900008DDAF5 /* Main.storyboard */; };
-		78166A8324E81900008DDAF5 /* MedibankCodeChallenge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 78166A8124E81900008DDAF5 /* MedibankCodeChallenge.xcdatamodeld */; };
 		78166A8524E81902008DDAF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78166A8424E81902008DDAF5 /* Assets.xcassets */; };
 		78166A8824E81902008DDAF5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78166A8624E81902008DDAF5 /* LaunchScreen.storyboard */; };
 		78166A9324E81902008DDAF5 /* MedibankCodeChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78166A9224E81902008DDAF5 /* MedibankCodeChallengeTests.swift */; };
 		78166A9E24E81982008DDAF5 /* SavedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78166A9D24E81982008DDAF5 /* SavedViewController.swift */; };
 		78166AA124E819E5008DDAF5 /* SavedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78166AA024E819E5008DDAF5 /* SavedViewModel.swift */; };
 		78166AA324E819F0008DDAF5 /* SourceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78166AA224E819F0008DDAF5 /* SourceViewModel.swift */; };
-		78166AA524E81A02008DDAF5 /* HeadlineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78166AA424E81A02008DDAF5 /* HeadlineViewModel.swift */; };
+		78166AA524E81A02008DDAF5 /* ArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78166AA424E81A02008DDAF5 /* ArticleViewModel.swift */; };
 		78166AAF24E82DF6008DDAF5 /* SourceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78166AAE24E82DF6008DDAF5 /* SourceService.swift */; };
 		78166AC724E83B98008DDAF5 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78166AC624E83B98008DDAF5 /* Utility.swift */; };
-		789F5D6D24E841A40049F82A /* Source+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789F5D6924E841A30049F82A /* Source+CoreDataProperties.swift */; };
-		789F5D6E24E841A40049F82A /* SavedHeadline+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789F5D6A24E841A30049F82A /* SavedHeadline+CoreDataClass.swift */; };
-		789F5D6F24E841A40049F82A /* SavedHeadline+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789F5D6B24E841A30049F82A /* SavedHeadline+CoreDataProperties.swift */; };
-		789F5D7024E841A40049F82A /* Source+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789F5D6C24E841A40049F82A /* Source+CoreDataClass.swift */; };
 		78EE793024E9318000DC8636 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EE792F24E9318000DC8636 /* AppError.swift */; };
 		78EE793324E9468600DC8636 /* SourceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EE793124E9468600DC8636 /* SourceCell.swift */; };
 		78EE793424E9468600DC8636 /* SourceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78EE793224E9468600DC8636 /* SourceCell.xib */; };
@@ -44,10 +39,10 @@
 		78EE795124EA57BF00DC8636 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EE795024EA57BF00DC8636 /* BaseViewModel.swift */; };
 		78EE795424EA587200DC8636 /* HeadlineService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EE795324EA587200DC8636 /* HeadlineService.swift */; };
 		78EE795624EA588100DC8636 /* HeadlineMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EE795524EA588100DC8636 /* HeadlineMapper.swift */; };
-		78EE795924EA650C00DC8636 /* String+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EE795824EA650C00DC8636 /* String+extensions.swift */; };
 		78EE795C24EA993800DC8636 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EE795A24EA993800DC8636 /* WebViewController.swift */; };
 		78EE796024EABD4B00DC8636 /* SavedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EE795F24EABD4B00DC8636 /* SavedService.swift */; };
 		78EE796424EAE1E800DC8636 /* ImageLoadingOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EE796324EAE1E800DC8636 /* ImageLoadingOperation.swift */; };
+		78EE796624EB75BC00DC8636 /* HeadlineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EE796524EB75BC00DC8636 /* HeadlineViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,7 +63,6 @@
 		78166A7A24E81900008DDAF5 /* HeadlineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlineViewController.swift; sourceTree = "<group>"; };
 		78166A7C24E81900008DDAF5 /* SourceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceViewController.swift; sourceTree = "<group>"; };
 		78166A7F24E81900008DDAF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		78166A8224E81900008DDAF5 /* MedibankCodeChallenge.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MedibankCodeChallenge.xcdatamodel; sourceTree = "<group>"; };
 		78166A8424E81902008DDAF5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		78166A8724E81902008DDAF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		78166A8924E81902008DDAF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -78,13 +72,9 @@
 		78166A9D24E81982008DDAF5 /* SavedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedViewController.swift; sourceTree = "<group>"; };
 		78166AA024E819E5008DDAF5 /* SavedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedViewModel.swift; sourceTree = "<group>"; };
 		78166AA224E819F0008DDAF5 /* SourceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceViewModel.swift; sourceTree = "<group>"; };
-		78166AA424E81A02008DDAF5 /* HeadlineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlineViewModel.swift; sourceTree = "<group>"; };
+		78166AA424E81A02008DDAF5 /* ArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewModel.swift; sourceTree = "<group>"; };
 		78166AAE24E82DF6008DDAF5 /* SourceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceService.swift; sourceTree = "<group>"; };
 		78166AC624E83B98008DDAF5 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
-		789F5D6924E841A30049F82A /* Source+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Source+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		789F5D6A24E841A30049F82A /* SavedHeadline+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SavedHeadline+CoreDataClass.swift"; sourceTree = "<group>"; };
-		789F5D6B24E841A30049F82A /* SavedHeadline+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SavedHeadline+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		789F5D6C24E841A40049F82A /* Source+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Source+CoreDataClass.swift"; sourceTree = "<group>"; };
 		78EE792F24E9318000DC8636 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		78EE793124E9468600DC8636 /* SourceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceCell.swift; sourceTree = "<group>"; };
 		78EE793224E9468600DC8636 /* SourceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SourceCell.xib; sourceTree = "<group>"; };
@@ -101,10 +91,10 @@
 		78EE795024EA57BF00DC8636 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		78EE795324EA587200DC8636 /* HeadlineService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlineService.swift; sourceTree = "<group>"; };
 		78EE795524EA588100DC8636 /* HeadlineMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlineMapper.swift; sourceTree = "<group>"; };
-		78EE795824EA650C00DC8636 /* String+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extensions.swift"; sourceTree = "<group>"; };
 		78EE795A24EA993800DC8636 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		78EE795F24EABD4B00DC8636 /* SavedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedService.swift; sourceTree = "<group>"; };
 		78EE796324EAE1E800DC8636 /* ImageLoadingOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoadingOperation.swift; sourceTree = "<group>"; };
+		78EE796524EB75BC00DC8636 /* HeadlineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlineViewModel.swift; sourceTree = "<group>"; };
 		B367F3D153333A4C75169624 /* Pods-MedibankCodeChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MedibankCodeChallenge.debug.xcconfig"; path = "Target Support Files/Pods-MedibankCodeChallenge/Pods-MedibankCodeChallenge.debug.xcconfig"; sourceTree = "<group>"; };
 		BB60624530207ABB1402C0E1 /* Pods_MedibankCodeChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MedibankCodeChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1E70712971F429F6EB6FA7B /* libPods-MedibankCodeChallengeTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MedibankCodeChallengeTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -157,7 +147,6 @@
 			children = (
 				78166A7624E81900008DDAF5 /* AppDelegate.swift */,
 				78166A7824E81900008DDAF5 /* SceneDelegate.swift */,
-				789F5D6824E841180049F82A /* CoreData */,
 				78166AC824E83B9C008DDAF5 /* Helper */,
 				78166AB124E82E01008DDAF5 /* Service */,
 				78166AA924E81E3D008DDAF5 /* Model */,
@@ -167,7 +156,6 @@
 				78166A8424E81902008DDAF5 /* Assets.xcassets */,
 				78166A8624E81902008DDAF5 /* LaunchScreen.storyboard */,
 				78166A8924E81902008DDAF5 /* Info.plist */,
-				78166A8124E81900008DDAF5 /* MedibankCodeChallenge.xcdatamodeld */,
 			);
 			path = MedibankCodeChallenge;
 			sourceTree = "<group>";
@@ -197,7 +185,8 @@
 			children = (
 				78166AA024E819E5008DDAF5 /* SavedViewModel.swift */,
 				78166AA224E819F0008DDAF5 /* SourceViewModel.swift */,
-				78166AA424E81A02008DDAF5 /* HeadlineViewModel.swift */,
+				78166AA424E81A02008DDAF5 /* ArticleViewModel.swift */,
+				78EE796524EB75BC00DC8636 /* HeadlineViewModel.swift */,
 				78EE795024EA57BF00DC8636 /* BaseViewModel.swift */,
 				78EE796324EAE1E800DC8636 /* ImageLoadingOperation.swift */,
 			);
@@ -231,20 +220,8 @@
 				78166AC624E83B98008DDAF5 /* Utility.swift */,
 				78EE792F24E9318000DC8636 /* AppError.swift */,
 				78EE793D24E962FD00DC8636 /* Decodable+extensions.swift */,
-				78EE795824EA650C00DC8636 /* String+extensions.swift */,
 			);
 			path = Helper;
-			sourceTree = "<group>";
-		};
-		789F5D6824E841180049F82A /* CoreData */ = {
-			isa = PBXGroup;
-			children = (
-				789F5D6A24E841A30049F82A /* SavedHeadline+CoreDataClass.swift */,
-				789F5D6B24E841A30049F82A /* SavedHeadline+CoreDataProperties.swift */,
-				789F5D6C24E841A40049F82A /* Source+CoreDataClass.swift */,
-				789F5D6924E841A30049F82A /* Source+CoreDataProperties.swift */,
-			);
-			path = CoreData;
 			sourceTree = "<group>";
 		};
 		78EE794324E9733300DC8636 /* Response */ = {
@@ -513,20 +490,17 @@
 				78166A9E24E81982008DDAF5 /* SavedViewController.swift in Sources */,
 				78EE794B24EA53E100DC8636 /* HeadlineCell.swift in Sources */,
 				78166AC724E83B98008DDAF5 /* Utility.swift in Sources */,
-				78EE795924EA650C00DC8636 /* String+extensions.swift in Sources */,
-				78166AA524E81A02008DDAF5 /* HeadlineViewModel.swift in Sources */,
+				78166AA524E81A02008DDAF5 /* ArticleViewModel.swift in Sources */,
 				78EE795124EA57BF00DC8636 /* BaseViewModel.swift in Sources */,
-				78166A8324E81900008DDAF5 /* MedibankCodeChallenge.xcdatamodeld in Sources */,
 				78EE795624EA588100DC8636 /* HeadlineMapper.swift in Sources */,
 				78EE794024E96E5200DC8636 /* SourceResponse.swift in Sources */,
-				789F5D6D24E841A40049F82A /* Source+CoreDataProperties.swift in Sources */,
 				78EE796424EAE1E800DC8636 /* ImageLoadingOperation.swift in Sources */,
-				789F5D6E24E841A40049F82A /* SavedHeadline+CoreDataClass.swift in Sources */,
 				78166AA124E819E5008DDAF5 /* SavedViewModel.swift in Sources */,
 				78EE793A24E9576700DC8636 /* BaseResponse.swift in Sources */,
 				78166A7D24E81900008DDAF5 /* SourceViewController.swift in Sources */,
 				78EE794524E9753700DC8636 /* SourceModel.swift in Sources */,
 				78166A7B24E81900008DDAF5 /* HeadlineViewController.swift in Sources */,
+				78EE796624EB75BC00DC8636 /* HeadlineViewModel.swift in Sources */,
 				78EE796024EABD4B00DC8636 /* SavedService.swift in Sources */,
 				78EE795424EA587200DC8636 /* HeadlineService.swift in Sources */,
 				78166AA324E819F0008DDAF5 /* SourceViewModel.swift in Sources */,
@@ -535,13 +509,11 @@
 				78EE794224E9712F00DC8636 /* HeadlineResponse.swift in Sources */,
 				78166AAF24E82DF6008DDAF5 /* SourceService.swift in Sources */,
 				78EE793C24E95B4D00DC8636 /* Network.swift in Sources */,
-				789F5D7024E841A40049F82A /* Source+CoreDataClass.swift in Sources */,
 				78EE794724E9765D00DC8636 /* SourceMapper.swift in Sources */,
 				78EE793024E9318000DC8636 /* AppError.swift in Sources */,
 				78166A7724E81900008DDAF5 /* AppDelegate.swift in Sources */,
 				78EE795C24EA993800DC8636 /* WebViewController.swift in Sources */,
 				78166A7924E81900008DDAF5 /* SceneDelegate.swift in Sources */,
-				789F5D6F24E841A40049F82A /* SavedHeadline+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -808,19 +780,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		78166A8124E81900008DDAF5 /* MedibankCodeChallenge.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				78166A8224E81900008DDAF5 /* MedibankCodeChallenge.xcdatamodel */,
-			);
-			currentVersion = 78166A8224E81900008DDAF5 /* MedibankCodeChallenge.xcdatamodel */;
-			path = MedibankCodeChallenge.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 78166A6B24E81900008DDAF5 /* Project object */;
 }

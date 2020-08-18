@@ -25,7 +25,7 @@ class HeadlineViewController: UIViewController {
         super.viewDidLoad()
         setupTableView()
         setupViewModel()
-        viewModel.loadHeadlines()
+        viewModel.loadData()
     }
     
     // MARK: - Closure functions
@@ -60,7 +60,7 @@ class HeadlineViewController: UIViewController {
     private func setupTableView() {
         tableview.delegate = self
         tableview.dataSource = self
-//        tableview.prefetchDataSource = self
+        tableview.prefetchDataSource = self
         tableview.rowHeight = Constant.rowHeight
         tableview.register(UINib(nibName: "HeadlineCell", bundle: nil), forCellReuseIdentifier: Constant.cellId)
     }
@@ -76,7 +76,7 @@ class HeadlineViewController: UIViewController {
 // MARK: - UITableview data source
 extension HeadlineViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.headlineList.count
+        return viewModel.articleList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -86,7 +86,7 @@ extension HeadlineViewController: UITableViewDataSource {
                 return UITableViewCell()
         }
         
-        let article = viewModel.headlineList[indexPath.row]
+        let article = viewModel.articleList[indexPath.row]
         cell.updateCell(data: article)
         viewModel.imageForCell(indexPath) { image in
             DispatchQueue.main.async {

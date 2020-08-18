@@ -6,4 +6,6 @@ protocol BaseViewModel {
     var isLoading: ((Bool) -> Void)? { get set }
     var fetchError: ((String) -> Void)? {get set}
     var reloadData: (() -> Void)? { get set }
+    
+    func loadData()
 }

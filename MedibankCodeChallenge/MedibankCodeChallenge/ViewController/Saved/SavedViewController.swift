@@ -24,7 +24,7 @@ class SavedViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        viewModel.loadSavedArticle()
+        viewModel.loadData()
     }
     
     // MARK: - Closure functions
@@ -52,7 +52,7 @@ class SavedViewController: UIViewController {
     private func setupTableView() {
         tableview.delegate = self
         tableview.dataSource = self
-        //        tableview.prefetchDataSource = self
+        tableview.prefetchDataSource = self
         tableview.rowHeight = HeadlineViewController.Constant.rowHeight
         tableview.register(UINib(nibName: "HeadlineCell", bundle: nil), forCellReuseIdentifier: HeadlineViewController.Constant.cellId)
     }
@@ -67,7 +67,7 @@ class SavedViewController: UIViewController {
 // MARK: - UITabview data source
 extension SavedViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.savedArticle.count
+        return viewModel.articleList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -77,8 +77,13 @@ extension SavedViewController: UITableViewDataSource {
                 return UITableViewCell()
         }
         
-        let article = viewModel.savedArticle[indexPath.row]
+        let article = viewModel.articleList[indexPath.row]
         cell.updateCell(data: article)
+        viewModel.imageForCell(indexPath) { image in
+            DispatchQueue.main.async {
+                cell.updateThumbnail(image)
+            }
+        }
         return cell
     }
     
@@ -94,5 +99,16 @@ extension SavedViewController: UITableViewDataSource {
 extension SavedViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewModel.openItem(indexPath)
+    }
+}
+
+// MARK: - UITableview prefetch data source
+extension SavedViewController: UITableViewDataSourcePrefetching {
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        viewModel.prefetchImage(indexPaths)
+    }
+    
+    func tableView(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]) {
+        viewModel.cancelprefetchImage(indexPaths)
     }
 }

@@ -4,20 +4,33 @@ import UIKit
 
 class HeadlineCell: UITableViewCell {
 
+    private enum Constant {
+        static let shadowOpacity: Float = 0.2
+        static let shadowRadius: CGFloat = 4.0
+        static let descSpacing: CGFloat = 10
+    }
+    
     // MARK: - IBOutlet
     @IBOutlet private var headlineWrapper: UIView! {
         didSet {
             headlineWrapper.layer.shadowColor = UIColor.black.cgColor
-            headlineWrapper.layer.shadowOpacity = 0.2
-            headlineWrapper.layer.shadowRadius = 4.0
+            headlineWrapper.layer.shadowOpacity = Constant.shadowOpacity
+            headlineWrapper.layer.shadowRadius = Constant.shadowRadius
             headlineWrapper.layer.shadowOffset = .zero
         }
     }
+    @IBOutlet private var headlineStackView: UIStackView!
     @IBOutlet private var titleLabel: UILabel!
     @IBOutlet private var descriptionLabel: UILabel!
     @IBOutlet private var sourceLabel: UILabel!
     @IBOutlet private var authorLabel: UILabel!
     @IBOutlet private var thumbnailImage: UIImageView!
+    
+    
+    // MARK: - Overrides
+    override func awakeFromNib() {
+        headlineStackView.setCustomSpacing(Constant.descSpacing, after: sourceLabel)
+    }
     
     override func prepareForReuse() {
         super.prepareForReuse()
@@ -28,6 +41,7 @@ class HeadlineCell: UITableViewCell {
         thumbnailImage.image = nil
     }
 
+    // MARK: - Functions
     func updateCell(data: ArticleItem) {
         titleLabel.text = data.title
         descriptionLabel.text = data.description

@@ -25,7 +25,7 @@ class SourceViewModel: BaseViewModel {
     var reloadRow: ((IndexPath) -> Void)?
     
     // MARK: - Functions
-    func loadSource() {
+    func loadData() {
         isLoading?(true)
         
         // Load sources from web service

@@ -104,7 +104,7 @@ class SourceViewController: UIViewController {
     }
     
     @objc private func refreshData() {
-        viewModel.loadSource()
+        viewModel.loadData()
     }
 }
 

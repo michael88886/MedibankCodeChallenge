@@ -4,14 +4,19 @@ import UIKit
 
 class SourceCell: UITableViewCell {
 
+    private enum Constant {
+        static let shadowOpacity: Float = 0.4
+        static let shadowRadius: CGFloat = 3.0
+    }
+    
     // MARK: - IBOutlet
     /// The flag label background
     @IBOutlet private var flagBackgroundView: UIView! {
         didSet {
             flagBackgroundView.layer.shadowColor = UIColor.black.cgColor
-            flagBackgroundView.layer.shadowOpacity = 0.4
+            flagBackgroundView.layer.shadowOpacity = Constant.shadowOpacity
             flagBackgroundView.layer.shadowOffset = .zero
-            flagBackgroundView.layer.shadowRadius = 3.0
+            flagBackgroundView.layer.shadowRadius = Constant.shadowRadius
         }
     }
     
