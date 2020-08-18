@@ -25,7 +25,7 @@ class HeadlineCell: UITableViewCell {
         descriptionLabel.text = ""
         authorLabel.text = ""
         sourceLabel.text = ""
-        thumbnailImage.image = UIImage(systemName: "photo")
+        thumbnailImage.image = nil
     }
 
     func updateCell(data: ArticleItem) {
