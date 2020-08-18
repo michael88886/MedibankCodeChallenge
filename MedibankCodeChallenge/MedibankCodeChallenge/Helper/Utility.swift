@@ -1,17 +1,8 @@
 //  Copyright © 2020 Michael.H. All rights reserved.
 
 import UIKit
-import CoreData
 
 final class Utility {
-    //// Will get core data context
-    static func dataContext() -> NSManagedObjectContext {
-        // Get app delegate
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        // Data context
-        return appDelegate.persistentContainer.viewContext
-    }
-    
     /// Will convert two letter into enmoji icon
     /// Credit:  https://stackoverflow.com/a/60413173
     static func toFlag(_ countryCode: String) -> String {
@@ -31,7 +22,7 @@ final class Utility {
         return alertVC
     }
     
-    // Will fetch current selected source from user default
+    /// Will fetch current selected source from user default
     static func fetchSelectedSources() -> [String] {
         let item = UserDefaults.standard.array(forKey: "Sources") as? [String]
         let sources = item ?? []

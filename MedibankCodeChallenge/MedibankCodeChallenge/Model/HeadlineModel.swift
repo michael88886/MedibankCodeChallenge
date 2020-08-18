@@ -7,7 +7,7 @@ struct HeadlineModel {
     let errorMessage: String?
 }
 
-struct ArticleItem {
+struct ArticleItem: Codable {
     let title: String
     let description: String?
     let thumbnailUrl: String?

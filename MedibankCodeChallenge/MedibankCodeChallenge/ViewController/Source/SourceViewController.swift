@@ -27,7 +27,6 @@ class SourceViewController: UIViewController {
                                                selector: #selector(addRefreshObeserver),
                                                name: UIApplication.didEnterBackgroundNotification,
                                                object: nil)
-        
         setupTableView()
         setupViewModel()
     }
