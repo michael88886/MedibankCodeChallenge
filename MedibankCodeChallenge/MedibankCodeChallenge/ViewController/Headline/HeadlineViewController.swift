@@ -4,7 +4,7 @@ import UIKit
 
 class HeadlineViewController: UIViewController {
 
-    private enum Constant {
+     enum Constant {
         static let rowHeight: CGFloat = 240
         static let cellId: String = "HeadlineCell"
     }
@@ -20,6 +20,7 @@ class HeadlineViewController: UIViewController {
     /// The view model
     private var viewModel = HeadlineViewModel()
     
+    // MARK: - Overrides
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
@@ -49,9 +50,8 @@ class HeadlineViewController: UIViewController {
         tableview.reloadData()
     }
     
-    func openlink(_ urlString: String) {
-        let url = URL(string: urlString)!
-        let webViewController = WebViewController(url: url)
+    func openlink(_ article: ArticleItem) {
+        let webViewController = WebViewController(article: article)
         self.present(webViewController, animated: true, completion: nil)
     }
     
@@ -73,7 +73,7 @@ class HeadlineViewController: UIViewController {
     }
 }
 
-// MARK: - Tableview data source
+// MARK: - UITableview data source
 extension HeadlineViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.headlineList.count
@@ -88,13 +88,29 @@ extension HeadlineViewController: UITableViewDataSource {
         
         let article = viewModel.headlineList[indexPath.row]
         cell.updateCell(data: article)
+        viewModel.imageForCell(indexPath) { image in
+            DispatchQueue.main.async {
+                cell.updateThumbnail(image)
+            }
+        }
         return cell
     }
 }
 
-// MARK: - Tableview delegate
+// MARK: - UITableview delegate
 extension HeadlineViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewModel.openItem(indexPath)
+    }
+}
+
+// MARK: - UITableview prefetch data source
+extension HeadlineViewController: UITableViewDataSourcePrefetching {
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        viewModel.prefetchImage(indexPaths)
+    }
+    
+    func tableView(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]) {
+        viewModel.cancelprefetchImage(indexPaths)
     }
 }

@@ -15,11 +15,15 @@ class WebViewController: UIViewController, WKUIDelegate {
     /// The web view
     private var webView: WKWebView!
     
-    private var webUrl: URL
+    /// The saved service
+    private let savedService = SavedService()
+    
+    /// The article reference
+    private var article: ArticleItem
     
     // MARK: - Lifecycle
-    init(url: URL) {
-        self.webUrl = url
+    init(article: ArticleItem) {
+        self.article = article
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -45,6 +49,14 @@ class WebViewController: UIViewController, WKUIDelegate {
             action: #selector(dismissController))
         backBtn.tintColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
         navItem.leftBarButtonItem = backBtn
+        
+        let bookmarkBtn = UIBarButtonItem(
+            image: UIImage(systemName: "bookmark")!.withRenderingMode(.alwaysTemplate),
+            style: .plain,
+            target: self,
+            action: #selector(saveToReadingList))
+        bookmarkBtn.tintColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
+        navItem.rightBarButtonItem = bookmarkBtn
         navigationBar.setItems([navItem], animated: false)
         
         // Progress bar
@@ -73,12 +85,15 @@ class WebViewController: UIViewController, WKUIDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        savedService.articleSaved = articleSavedMessage
+        checkForSaveArtical()
+        
         webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
         webView.addObserver(self, forKeyPath: #keyPath(WKWebView.title), options: .new, context: nil)
         
-//        let myURL = URL(string: "https://www.apple.com")
-        let myRequest = URLRequest(url: webUrl)
-        webView.load(myRequest)
+        let url = URL(string: article.url)!
+        let urlReqest = URLRequest(url: url)
+        webView.load(urlReqest)
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
@@ -92,7 +107,39 @@ class WebViewController: UIViewController, WKUIDelegate {
     }
     
     // MARK: - Private helper
+    // Check if current article is already saved
+    private func checkForSaveArtical() {
+        let savedArticles = savedService.fetchSavedArticles()
+        let sameArticle = savedArticles.firstIndex(where: { $0.url == article.url })
+        if let _ = sameArticle {
+            updateBookmarkButton()
+        }
+    }
+    
+    private func articleSavedMessage() {
+        let alert = Utility.errorAlert(with: "Article Saved", message: "You can found it in [Saved] tab.")
+        self.present(alert, animated: true) {
+            self.updateBookmarkButton()
+        }
+    }
+    
+    private func updateBookmarkButton() {
+        // Update bookmark (icon, disable), since we already have same item stored
+        let newBtn = UIBarButtonItem(
+            image: UIImage(systemName: "bookmark.fill")!.withRenderingMode(.alwaysTemplate),
+            style: .plain,
+            target: self,
+            action: nil)
+        newBtn.tintColor = .orange
+        navigationBar.topItem?.rightBarButtonItem = newBtn
+        navigationBar.topItem?.rightBarButtonItem?.isEnabled = false
+    }
+    
     @objc private func dismissController() {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    @objc private func saveToReadingList() {
+        savedService.saveArticle(article)
     }
 }
